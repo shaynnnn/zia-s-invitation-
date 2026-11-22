@@ -1,0 +1,162 @@
+ :root{--ink:#57364e;--muted:#806b7b;--pink:#e98f9b;--rose:#f7dce5;--blue:#a9c9ed;--lav:#e9def6;--gold:#a68b4b;--paper:#fffafd;--line:#f0dce8;--shadow:0 18px 50px rgba(111,70,105,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Nunito, sans-serif;background:radial-gradient(circle at 8% 15%,#fce4ed 0,transparent 25%),radial-gradient(circle at 92% 32%,#dff6f8 0,transparent 28%),linear-gradient(135deg,#fffafd,#f7f2ff 55%,#fff7f2);min-height:100vh}.fairy-dust{pointer-events:none;position:fixed;inset:0;opacity:.25;background-image:radial-gradient(#d9a7c7 1px,transparent 1px),radial-gradient(#e5c88b 1px,transparent 1px);background-size:48px 48px,73px 73px;background-position:0 0,20px 25px;z-index:-1}
+.site-header{max-width:1200px;margin:auto;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:"Cormorant Garamond",serif;font-weight:700;font-size:24px}.brand-mark{color:var(--gold);font-size:32px}.brand small{display:block;font:700 10px Nunito;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}nav{display:flex;align-items:center;gap:22px}nav a,.nav-admin{color:var(--ink);font:800 13px Nunito;text-decoration:none;background:none;border:0;cursor:pointer}.section-wrap{max-width:1160px;margin:auto;padding:64px 28px}.hero{display:grid;grid-template-columns:1fr .85fr;align-items:center;gap:56px;padding-top:38px}.eyebrow{color:var(--gold);font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase}.hero h1{font:600 clamp(54px,7vw,92px)/.92 "Cormorant Garamond",serif;margin:18px 0 8px;color:#6e4967}.hero h1 em{display:block;color:#d77f8b;font-weight:600}.hero-name{font:italic 600 clamp(24px,3vw,36px) "Cormorant Garamond",serif;color:#bd697c;margin:18px 0}.hero-intro{max-width:500px;color:var(--muted);line-height:1.8}.primary-link,.primary-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:30px;padding:14px 24px;background:linear-gradient(110deg,#e98e9b,#b8a5dc);color:white;text-decoration:none;font:800 14px Nunito;box-shadow:0 9px 22px #dba8c766;cursor:pointer}.countdown{display:flex;gap:12px;margin-top:34px}.countdown div{min-width:67px;text-align:center;background:#ffffffbd;border:1px solid white;border-radius:15px;padding:10px 8px;box-shadow:var(--shadow)}.countdown strong{display:block;font:700 25px "Cormorant Garamond";color:#a36c91}.countdown span{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}.invitation-frame{position:relative;isolation:isolate;background:linear-gradient(145deg,#fffdf4,#fce9f2 48%,#fff8df);padding:17px 17px 12px;border:2px solid #e8c982;border-radius:235px 235px 30px 30px;box-shadow:0 0 0 5px #fff9,0 0 0 8px #e9c7d8,0 20px 55px rgba(111,70,105,.20);max-width:470px;margin:20px auto;transform:rotate(1deg)}
+.invitation-frame::after{content:"";position:absolute;inset:8px;border:1px solid #e8c982;border-radius:225px 225px 23px 23px;pointer-events:none;z-index:2}
+.invitation-frame img{display:block;position:relative;z-index:1;width:100%;height:min(68vh,650px);min-height:390px;object-fit:cover;object-position:center 18%;border:4px solid #fff;border-radius:220px 220px 19px 19px;box-shadow:inset 0 0 0 2px #e8c982}
+.frame-sparkle{position:absolute;z-index:4;color:#c49b4f;text-shadow:0 1px 4px #fff;font-size:27px}
+.sparkle-left{left:-15px;top:43%}.sparkle-right{right:-15px;top:54%}
+.frame-caption{display:block;text-align:center;padding:14px 5px 4px;color:var(--gold);font:italic 600 18px "Cormorant Garamond"}
+.section-heading{text-align:center;margin-bottom:30px}.section-heading h2,.modal-card h2{font:600 clamp(34px,4vw,48px) "Cormorant Garamond";margin:8px 0;color:#744e70}.section-heading p{color:var(--muted);margin:0}.details{padding-top:28px}.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.detail-card{background:#ffffffc9;border:1px solid white;border-radius:22px;padding:25px;text-align:center;box-shadow:var(--shadow)}.detail-card>span{font-size:26px;color:#cf8ca7;display:block;margin-bottom:8px}.detail-card small{display:block;letter-spacing:2px;color:var(--gold);font-weight:900;font-size:10px}.detail-card strong{display:block;margin:9px 0;font-size:17px}.detail-card p{font-size:13px;color:var(--muted)}.detail-card a{font-size:12px;color:#98658c;font-weight:800}.reminders{margin:22px auto 0;max-width:850px;padding:12px 20px;border-radius:18px;background:#f9e9ef;text-align:center;color:#79576f;font-size:13px}.reminders p{margin:7px}
+.rsvp-section{padding-top:60px}.rsvp-card{max-width:760px;margin:auto;background:#ffffffdc;border:1px solid white;padding:clamp(20px,4vw,38px);border-radius:26px;box-shadow:var(--shadow);display:grid;gap:19px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}label,fieldset legend{font-weight:800;font-size:13px;color:#674c63}label>span,legend span{color:#cf7186}input,select,textarea{display:block;width:100%;margin-top:7px;border:1px solid #ead6e2;background:#fffdfd;border-radius:11px;padding:12px 13px;font:600 14px Nunito;color:var(--ink);outline:none}input:focus,select:focus,textarea:focus{border-color:#c58cb4;box-shadow:0 0 0 3px #efdced}textarea{resize:vertical}fieldset{border:0;padding:0;margin:0;display:grid;gap:9px}.choice{display:flex;align-items:center;gap:9px;font-weight:600}.choice input{width:auto;margin:0;accent-color:#bd83a6}.hint,.form-footnote{font-size:11px;color:var(--muted);font-weight:600}.hint{display:block;margin-top:6px}.form-footnote{text-align:center;margin:0}.form-error{color:#b63f59;font-size:12px;font-weight:800;min-height:16px}.notice{max-width:760px;margin:0 auto 18px;background:#fff0d9;border:1px solid #f1d4a1;padding:16px;border-radius:14px;text-align:center}.hidden{display:none!important}
+.wishes-section{padding-top:30px}.wishes-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.wish-card{background:#fffdfd;border:1px solid white;padding:20px;border-radius:18px;box-shadow:var(--shadow);min-height:120px}.wish-card p{font:italic 600 19px "Cormorant Garamond";margin:0 0 12px;overflow-wrap:anywhere}.wish-card strong{font-size:11px;color:#b37b9a}.muted{text-align:center;color:var(--muted);grid-column:1/-1}footer{text-align:center;padding:30px;color:#8b6c84;font:600 16px "Cormorant Garamond";background:#fff8fcaa}footer small{display:block;font:700 10px Nunito;letter-spacing:2px;margin-top:5px}
+.modal{position:fixed;inset:0;background:#38243c99;z-index:20;display:grid;place-items:center;padding:16px;overflow:auto}.modal-card{position:relative;background:#fffafd;border:1px solid white;border-radius:24px;padding:30px;width:min(100%,520px);max-height:94vh;overflow:auto;box-shadow:0 30px 90px #28152d55}.modal-close{position:absolute;right:15px;top:10px;border:0;background:#f7e6ef;color:#7d5570;border-radius:50%;width:34px;height:34px;font-size:24px;cursor:pointer;z-index:2}.thank-card{text-align:center}.thank-card>img{width:min(100%,280px);max-height:380px;object-fit:contain;border-radius:12px}.thank-card h2{font-size:34px;margin:14px 0 5px}.thank-card p{color:var(--muted)}.reserved-seats{font-weight:900;color:#a36c91!important}.modal-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}.secondary-button{border:1px solid #dcbfd1;border-radius:24px;background:#fff;color:#805c79;padding:11px 16px;font:800 12px Nunito;cursor:pointer}.admin-card{width:min(100%,1100px)}.admin-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.admin-top h2{margin:3px 0 18px}.admin-card form{display:grid;gap:12px}.admin-card form .primary-button{justify-self:start}.notification-strip{padding:12px 15px;border-radius:12px;background:#f8e9f0;color:#81516e;font-size:12px;font-weight:800;margin:10px 0}.stats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:15px 0}.stats-grid article{padding:14px;border-radius:13px;background:#f8f1fa}.stats-grid small{display:block;font-size:10px;color:var(--muted)}.stats-grid strong{font:700 26px "Cormorant Garamond";color:#98698d}.admin-tools{display:flex;gap:8px;align-items:center;margin:14px 0}.admin-tools input{flex:1;margin:0}.admin-tools select{width:150px;margin:0}.toggle-row{display:flex;align-items:center;gap:8px}.toggle-row input{width:auto;margin:0}.table-wrap{overflow:auto;max-height:390px;border:1px solid var(--line);border-radius:12px;margin-top:12px}table{width:100%;border-collapse:collapse;min-width:900px;font-size:11px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f8edf4;position:sticky;top:0}td button{margin:2px}.admin-subheading{font:600 24px "Cormorant Garamond"}.manual-form{grid-template-columns:repeat(3,1fr)}.manual-form .primary-button{grid-column:1/-1}
+@media(max-width:800px){.site-header{padding:14px 18px;align-items:flex-start}.site-header nav{gap:10px;flex-wrap:wrap;justify-content:flex-end}nav a,.nav-admin{font-size:11px}.hero{grid-template-columns:1fr;gap:35px;text-align:center;padding-top:28px}.hero-intro{margin:0 auto 20px}.countdown{justify-content:center}.invitation-frame{max-width:400px}.detail-grid{grid-template-columns:1fr}.wishes-wall{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.site-header{display:block}.brand{justify-content:center}.site-header nav{justify-content:center;margin-top:14px;gap:12px}.section-wrap{padding:42px 17px}.hero h1{font-size:62px}.hero-name{font-size:27px}.countdown{gap:6px}.countdown div{min-width:0;flex:1;padding:9px 4px}.countdown strong{font-size:22px}.countdown span{font-size:8px}.invitation-frame{padding:7px;border-radius:130px 130px 20px 20px}.invitation-frame img{border-radius:125px 125px 14px 14px}.form-grid{grid-template-columns:1fr}.rsvp-card{padding:20px 16px}.wishes-wall{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.admin-tools{flex-wrap:wrap}.admin-tools input{flex-basis:100%}.admin-tools select{flex:1}.admin-top{align-items:flex-start}.modal-card{padding:24px 17px}.manual-form{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:no-preference){.brand-mark{animation:twinkle 3s ease-in-out infinite alternate}.primary-link:hover,.primary-button:hover{transform:translateY(-2px);filter:saturate(1.08)}@keyframes twinkle{to{transform:rotate(25deg) scale(1.15);opacity:.65}}}
+@media print{body{background:white}.site-header,main,footer,.modal-close,.admin-tools,.toggle-row,.admin-subheading,.manual-form,#adminLoginView,.admin-top button{display:none!important}#adminModal{position:static;background:white;padding:0}.admin-card{box-shadow:none;border:0;width:100%;max-height:none;overflow:visible}.table-wrap{max-height:none;overflow:visible}table{min-width:0;font-size:9px}th,td{padding:5px}}
+
+
+/* Zia's supplied watercolor fairy background and larger readable type */
+body { background: linear-gradient(rgba(255,250,255,.38),rgba(255,250,255,.38)),url("./public/images/background-zia.jpg") center top / cover fixed no-repeat; font-size:17px; }
+.fairy-dust { opacity:.12; }
+.site-header, footer { background:rgba(255,250,255,.66); backdrop-filter:blur(8px); border-radius:0 0 22px 22px; }
+nav a,.nav-admin { font-size:15px; }
+.eyebrow { font-size:13px; }
+.hero-intro,.section-heading p,.detail-card p,.reminders { font-size:16px; }
+.detail-card strong { font-size:19px; }
+.detail-card small { font-size:12px; }
+.countdown span { font-size:12px; }
+.countdown strong { font-size:29px; }
+.rsvp-launch { max-width:700px; margin:auto; text-align:center; padding:30px; border:1px solid #fff; border-radius:24px; background:rgba(255,255,255,.78); box-shadow:var(--shadow); }
+.rsvp-launch p { font-size:19px; }
+.rsvp-launch .primary-button { font-size:17px; padding:16px 30px; }
+.rsvp-modal-card { width:min(100%,780px); }
+.rsvp-modal-card > h2 { margin:8px 0 20px; }
+.rsvp-modal-card .rsvp-card { max-width:none; padding:10px 0 0; border:0; box-shadow:none; background:transparent; }
+.rsvp-card { gap:21px; }
+.rsvp-card label,.rsvp-card fieldset legend { font-size:16px; }
+.rsvp-card input,.rsvp-card select,.rsvp-card textarea { font-size:16px; padding:14px 15px; }
+.rsvp-card .choice { font-size:15px; }
+.rsvp-card .hint,.rsvp-card .form-footnote { font-size:13px; }
+.primary-button { font-size:16px; padding:15px 27px; }
+.thank-card { width:min(100%,620px); min-height:650px; padding:58px 38px 34px; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(rgba(255,250,255,.13),rgba(255,250,255,.22)),url("./public/images/zia tag.png") center / 100% 100% no-repeat; border:0; border-radius:8px; box-shadow:0 25px 80px rgba(60,35,70,.25); }
+.thank-card h2,.thank-card p { text-shadow:0 1px 5px rgba(255,255,255,.95); }
+.thank-card h2 { font-size:38px; }
+.thank-card p { font-size:17px; color:#674c63; }
+.thank-card .modal-close { background:rgba(255,255,255,.8); }
+.admin-login-form { display:grid; gap:14px; }
+.admin-login-form label { font-size:15px; }
+.admin-login-form input { font-size:16px; padding:13px 14px; }
+@media(max-width:600px) { body { background-attachment:scroll; background-position:center top; } .thank-card { min-height:560px; padding:52px 22px 26px; } .thank-card h2 { font-size:31px; } .rsvp-launch { padding:24px 16px; } }
+
+@media(max-width:520px){
+  .invitation-frame{width:min(88vw,390px);padding:13px 13px 10px;margin:22px auto}
+  .invitation-frame img{height:58vh;min-height:340px;max-height:520px}
+  .frame-caption{font-size:17px}
+}
+
+/* Organizer dashboard refinements: preserve the invitation's pastel fairy palette. */
+.admin-card.admin-full { width:min(100%,1180px); }
+.admin-full #adminDashboard h2 { margin-top:4px; }
+.admin-full .notification-strip { background:linear-gradient(120deg,#f8e9f0,#f1e9fb); border:1px solid #eed8e7; }
+.admin-full .stats-grid article { background:rgba(255,255,255,.86); border:1px solid #f1e0ed; box-shadow:0 8px 22px rgba(111,70,105,.06); }
+.admin-full .stats-grid strong { font-size:30px; }
+.admin-tools input,.admin-tools select { border:1px solid #ead6e2; background:#fffdfd; border-radius:12px; padding:11px 12px; color:var(--ink); font:600 13px Nunito; }
+.admin-tools button { white-space:nowrap; }
+.toggle-row { background:#fff9fd; border:1px solid #f0dce8; padding:11px 14px; border-radius:12px; margin:10px 0; }
+.table-wrap { background:#fff; max-height:440px; }
+table { min-width:1000px; }
+th { color:#79536f; font-size:11px; letter-spacing:.35px; }
+.status { display:inline-block; border-radius:20px; padding:4px 9px; font-weight:900; font-size:10px; white-space:nowrap; }
+.status.confirmed { color:#567e68; background:#e8f5ec; }
+.status.declined { color:#9c6873; background:#fbe9ed; }
+.subguest { color:#8c7290; font-size:10px; }
+.action-cell { white-space:nowrap; }
+.tiny-btn { border:1px solid #e7cfdf; background:#fff7fc; color:#79536f; border-radius:14px; padding:6px 9px; font:800 10px Nunito; cursor:pointer; }
+.tiny-btn:hover { background:#f4e4f0; }
+.tiny-btn.danger { border-color:#f0cbd1; color:#a55566; background:#fff5f5; }
+.empty-table { text-align:center; color:var(--muted); padding:24px; }
+.manual-form input,.manual-form select { min-width:0; }
+@media(max-width:700px){.admin-card.admin-full{width:100%;}.stats-grid{grid-template-columns:repeat(2,1fr)}.admin-tools button{flex:1}.manual-form{grid-template-columns:1fr 1fr}}
+
+/* Manual guest count fields: labeled inputs and auto-calculated total */
+.manual-form .manual-count-field{display:block;font-size:12px;font-weight:800;color:var(--muted);min-width:0}
+.manual-form .manual-count-field input{margin-top:7px}
+.manual-form .total-field input{background:#f8f1fa;color:#98698d;font-weight:900}
+
+/* Fix RSVP confirmation modal: remove duplicate tag artwork and prevent text overlap. */
+#thankYouModal.modal {
+  padding: clamp(8px, 2.5vw, 24px);
+  align-items: center;
+}
+#thankYouModal .thank-card {
+  width: min(100%, 560px);
+  min-height: 0;
+  max-height: min(94vh, 900px);
+  padding: clamp(46px, 5vh, 62px) clamp(16px, 4vw, 30px) clamp(18px, 3vh, 30px);
+  gap: 10px;
+  justify-content: flex-start;
+  overflow-y: auto;
+  background: linear-gradient(135deg, rgba(255,250,255,.96), rgba(240,248,255,.94));
+  border: 1px solid #f1d9e8;
+  border-radius: 22px;
+}
+#thankYouModal .thank-card > img {
+  display: block;
+  width: min(100%, 230px);
+  max-height: min(34vh, 300px);
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 4px;
+  flex: 0 0 auto;
+}
+#thankYouModal .thank-card h2 {
+  font-size: clamp(27px, 4vw, 36px);
+  line-height: 1.12;
+  margin: 4px 0;
+  overflow-wrap: anywhere;
+}
+#thankYouModal .thank-card p {
+  line-height: 1.5;
+  margin: 5px 0;
+  overflow-wrap: anywhere;
+}
+#thankYouModal .thank-card .reserved-seats {
+  margin: 8px 0 12px;
+}
+#thankYouModal .modal-actions {
+  width: 100%;
+  gap: 10px;
+  margin: 4px 0;
+}
+#thankYouModal .modal-actions button {
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.3;
+}
+#thankYouModal .thank-card .hint {
+  margin-top: 8px;
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  #thankYouModal .thank-card {
+    width: 100%;
+    max-height: 94dvh;
+    padding: 48px 16px 20px;
+    gap: 8px;
+  }
+  #thankYouModal .thank-card > img {
+    width: min(100%, 190px);
+    max-height: 28dvh;
+  }
+  #thankYouModal .thank-card h2 {
+    font-size: clamp(25px, 7vw, 31px);
+  }
+  #thankYouModal .thank-card .modal-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #thankYouModal .thank-card .modal-actions button {
+    width: 100%;
+  }
+}

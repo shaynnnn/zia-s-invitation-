@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8e8f2">
+  <meta name="description" content="Celebrate Zia Vie Marie's 7th birthday — Seven & Magical!">
+  <title>Zia Vie Marie — Seven & Magical</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="fairy-dust" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-mark">✧</span><span>Zia Vie Marie <small>Seven & Magical</small></span></a>
+    <nav><a href="#details">The Celebration</a><a href="#rsvp">RSVP</a><a href="#wishes">Birthday Wishes</a><button id="adminOpen" class="nav-admin">Organizer</button></nav>
+  </header>
+
+  <main id="home">
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">A little princess fairy is turning</span>
+        <h1>Seven <em>& Magical</em></h1>
+        <p class="hero-name">Happy Birthday, Zia Vie Marie!</p>
+        <p class="hero-intro">A day filled with fairy dust, happy memories, and magical moments. Your presence will make this celebration even more special.</p>
+        <a class="primary-link" href="#rsvp">Reserve your seats <span>✧</span></a>
+        <div class="countdown" aria-label="Countdown to the birthday party">
+          <div><strong id="days">--</strong><span>Days</span></div>
+          <div><strong id="hours">--</strong><span>Hours</span></div>
+          <div><strong id="minutes">--</strong><span>Minutes</span></div>
+          <div><strong id="seconds">--</strong><span>Seconds</span></div>
+        </div>
+      </div>
+      <div class="invitation-frame">
+        <span class="frame-sparkle sparkle-left" aria-hidden="true">✧</span>
+        <span class="frame-sparkle sparkle-right" aria-hidden="true">✦</span>
+        <img src="./public/images/zia.png" alt="Zia Vie Marie wearing her blue princess birthday gown">
+        <span class="frame-caption">You're invited to a magical celebration</span>
+      </div>
+    </section>
+
+    <section id="details" class="details section-wrap">
+      <div class="section-heading"><span class="eyebrow">Save the date</span><h2>A magical day awaits</h2><p>We can't wait to celebrate with you!</p></div>
+      <div class="detail-grid">
+        <article class="detail-card"><span>✧</span><small>DATE</small><strong>Friday, December 11, 2026</strong></article>
+        <article class="detail-card"><span>♡</span><small>TIME</small><strong>7:00 PM</strong></article>
+        <article class="detail-card"><span>⌖</span><small>VENUE</small><strong>Jollibee Valley Golf</strong><p>Volleygolf, Cainta / Antipolo area</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jollibee+Valley+Golf+Volleygolf+Cainta+Antipolo">Open in Google Maps ↗</a></article>
+      </div>
+      <div class="reminders"><p>✧ Please RSVP on or before <b>December 3, 2026</b>.</p><p>✧ Each invited guest/household may reserve up to <b>2 seats only</b>.</p></div>
+    </section>
+
+    <section id="rsvp" class="rsvp-section section-wrap">
+      <div class="section-heading"><span class="eyebrow">Kindly reply</span><h2>Will you join the magic?</h2><p>Please send your response before the RSVP deadline.</p></div>
+      <div id="deadlineMessage" class="notice hidden"></div>
+      <div class="rsvp-launch"><p>We would love to celebrate this magical day with you.</p><button id="openRsvp" class="primary-button" type="button">Open Reservation Form ✧</button></div>
+    </section>
+
+    <section id="wishes" class="wishes-section section-wrap">
+      <div class="section-heading"><span class="eyebrow">A little love for the birthday girl</span><h2>Magical Birthday Wishes</h2><p>Sweet messages from family and friends.</p></div>
+      <div id="wishesWall" class="wishes-wall"><p class="muted">Birthday wishes will appear here after guests submit them.</p></div>
+    </section>
+  </main>
+
+  <footer><span>✧ Made with love for Zia Vie Marie ✧</span><small>December 11, 2026</small></footer>
+
+  <div id="rsvpModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="rsvpModalTitle">
+    <div class="modal-card rsvp-modal-card">
+      <button class="modal-close" data-close="rsvpModal" aria-label="Close">×</button>
+      <span class="eyebrow">Kindly reply</span><h2 id="rsvpModalTitle">Your Magical Reservation</h2>
+      <form id="rsvpForm" class="rsvp-card">
+        <div class="form-grid">
+          <label>Primary guest full name <span>*</span><input name="guestName" required maxlength="100" placeholder="Your full name"></label>
+          <label>Contact number / Messenger name <span>*</span><input name="contact" required maxlength="80" placeholder="Contact number or Messenger name"></label>
+        </div>
+        <fieldset><legend>Attendance confirmation <span>*</span></legend>
+          <label class="choice"><input type="radio" name="attendance" value="yes" checked> Joyfully accepts — Yes, we'll be there!</label>
+          <label class="choice"><input type="radio" name="attendance" value="no"> Regretfully declines</label>
+        </fieldset>
+        <div id="seatFields">
+          <label>Number of seats <span>*</span><select name="seats" id="seats"><option value="1">1 Seat</option><option value="2">2 Seats</option></select><small class="hint">Public reservations are limited to 2 seats per household.</small></label>
+          <div id="companionFields" class="hidden form-grid">
+            <label>Companion / plus-one name <span>*</span><input name="companionName" id="companionName" maxlength="100" placeholder="Companion's full name"></label>
+            <label>Meal breakdown <span>*</span><select name="breakdown" id="breakdown"><option value="1 Adult + 1 Kid">1 Adult + 1 Kid</option><option value="2 Adults">2 Adults</option><option value="2 Kids">2 Kids</option></select></label>
+          </div>
+          <div id="singleBreakdown" class="form-grid"><label>Meal type <span>*</span><select name="singleType"><option value="Adult">1 Adult</option><option value="Kid">1 Kid</option></select></label></div>
+        </div>
+        <label>Dietary notes / special requests<textarea name="notes" rows="2" maxlength="500" placeholder="Optional"></textarea></label>
+        <button class="primary-button" type="submit" id="submitRsvp">Send my RSVP ✧</button>
+        <p class="form-footnote">Your contact details are visible only to the organizer.</p><div id="formError" class="form-error" role="alert"></div>
+      </form>
+    </div>
+  </div>
+
+  <div id="thankYouModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="thankTitle">
+    <div class="modal-card thank-card">
+      <button class="modal-close" data-close="thankYouModal" aria-label="Close">×</button>
+      <img src="./public/images/zia tag.png" alt="Thank you for celebrating with me, Zia Vie Marie">
+      <h2 id="thankTitle">Your RSVP is received!</h2>
+      <p id="thankMessage">Thank you for being part of Zia Vie Marie's magical day.</p>
+      <p id="reservedSeats" class="reserved-seats"></p>
+      <div class="modal-actions"><button id="calendarButton" class="primary-button" type="button">Add to Google Calendar</button><button class="secondary-button" data-close="thankYouModal" type="button">Close</button></div>
+      <p class="hint">Keep this browser session if you need to edit your response before the deadline.</p>
+    </div>
+  </div>
+
+  <div id="adminModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+    <div class="modal-card admin-card">
+      <button class="modal-close" data-close="adminModal" aria-label="Close">×</button>
+      <div id="adminLoginView">
+        <span class="eyebrow">Organizer access</span><h2 id="adminTitle">Admin sign in</h2>
+        <p class="google-login-copy">Sign in with the organizer email and password created in Firebase Authentication.</p>
+        <form id="adminLoginForm" class="admin-login-form">
+          <label>Email address<input id="adminEmail" type="email" autocomplete="username" required placeholder="Organizer email"></label>
+          <label>Password<input id="adminPassword" type="password" autocomplete="current-password" required placeholder="Password"></label>
+          <button id="emailAdminLogin" class="primary-button" type="submit">Sign in</button>
+        </form><p id="adminLoginError" class="form-error" role="alert"></p>
+      </div>
+      <div id="adminDashboard" class="hidden">
+        <div class="admin-top"><div><span class="eyebrow">Private organizer area</span><h2>Guest dashboard</h2></div><button id="adminLogout" class="secondary-button">Sign out</button></div>
+        <div id="adminNotifications" class="notification-strip">No new notifications.</div>
+        <div class="stats-grid">
+          <article><small>Reserved seats</small><strong id="statSeats">0</strong></article>
+          <article><small>Adults</small><strong id="statAdults">0</strong></article>
+          <article><small>Kids</small><strong id="statKids">0</strong></article>
+          <article><small>Confirmed households</small><strong id="statConfirmed">0</strong></article>
+          <article><small>Declined</small><strong id="statDeclined">0</strong></article>
+          <article><small>Days to RSVP cutoff</small><strong id="statDays">—</strong></article>
+        </div>
+        <div class="admin-tools"><input id="guestSearch" placeholder="Search guest or contact"><select id="guestFilter"><option value="all">All responses</option><option value="yes">Confirmed</option><option value="no">Declined</option></select><button id="exportCsv" class="secondary-button">Export CSV</button><button id="printList" class="secondary-button">Print checklist</button></div>
+        <label class="toggle-row"><input type="checkbox" id="rsvpOverride"> Reopen RSVPs after deadline / manually close RSVPs</label>
+        <p class="hint">The organizer can edit guest records and grant more than 2 seats. Public guests remain capped at 2.</p>
+        <div class="table-wrap"><table><thead><tr><th>Guest / companion</th><th>Attendance</th><th>Seats</th><th>Adults / Kids</th><th>Contact</th><th>Notes / wish</th><th>Updated</th><th>Actions</th></tr></thead><tbody id="guestRows"><tr><td colspan="8">Loading...</td></tr></tbody></table></div>
+        <h3 class="admin-subheading">Add guest manually</h3>
+        <form id="manualGuestForm" class="manual-form"><input name="guestName" required placeholder="Guest name"><input name="contact" required placeholder="Contact"><select name="attendance"><option value="yes">Confirmed</option><option value="no">Declined</option></select><label class="manual-count-field">Adults<input name="adults" type="number" min="0" max="20" value="1" required></label><label class="manual-count-field">Kids<input name="kids" type="number" min="0" max="20" value="0" required></label><label class="manual-count-field total-field">Total guests<input id="manualTotalGuests" type="number" value="1" readonly aria-label="Total guests (automatically calculated)"></label><button class="primary-button">Add guest</button></form>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
